@@ -18,7 +18,6 @@ try {
     });
 
     octokit.request(listArtifactsForRepo).then(response => {
-        console.log(response);
         const totalCount = response.data.total_count;
         const lastPage = Math.floor(totalCount/perPage) + 1;
         let pageIndex = 0;
