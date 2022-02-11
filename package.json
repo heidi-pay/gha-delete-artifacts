@@ -1,0 +1,30 @@
+{
+  "name": "gha-delete-artifacts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "author": "Heidi Pay",
+  "license": "ISC",
+  "scripts": {
+    "build": "ncc build index.js --minify",
+    "dev": "cross-env NODE_ENV=dev node ./index.js",
+    "test": "echo 'No test framework configured'"
+  },
+  "keywords": [
+    "github",
+    "action",
+    "delete",
+    "artifact",
+    "artifacts"
+  ],
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@octokit/action": "^3.18.0",
+    "@octokit/core": "^3.5.1"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.21.1",
+    "prettier": "^1.19.1"
+  }
+}

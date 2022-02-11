@@ -1,0 +1,17 @@
+name: 'Delete artifacts'
+description: 'Delete artifacts'
+inputs:
+  days:
+    description: 'Artifacts older than this number of days will be deleted'
+    required: true
+  max-artifacts-to-delete:
+    description: "Max artifacts to delete (0=dry run) (default=0, max=100) !important keep this number low to don't reach github api rate limit"
+    required: true
+    default: 50
+  dry-run:
+    description: "Dry run 'yes' or 'No' (defaulf: yes)"
+    required: true
+    default: 'yes'
+runs:
+  using: node12
+  main: dist/index.js
