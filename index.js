@@ -30,7 +30,7 @@ try {
         let artifactDeletedCount = 0;
 
         async function deleteArtifacts() {
-            while (artifactToDeleteCount > 0) {
+            while (artifactToDeleteCount > 0 && lastPage - pageIndex > 0) {
                 const listArtifactsForRepoToRemove = octokit.actions.listArtifactsForRepo.endpoint.merge({
                     owner,
                     repo,
@@ -61,6 +61,7 @@ try {
                         deleteArtifactsPromises.push(deleteArtifactsPromise);
                     }
                 });
+                pageIndex++;
                 artifactToDeleteCount -= perPage;
             }
 
